@@ -1,0 +1,51 @@
+{
+  "name": "se-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for BTH Software Engineering",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node -r dotenv/config ./prod/index.js",
+    "dev": "nodemon -r dotenv/config --watch './**/*.ts' --exec 'ts-node' src/index.ts",
+    "test": "mocha -r ts-node/register \"dist/tests/**/*.spec.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nizos/se-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nizos/se-bot/issues"
+  },
+  "homepage": "https://github.com/nizos/se-bot#readme",
+  "prisma": {
+    "schema": "./src/data/db/schema.prisma"
+  },
+  "dependencies": {
+    "@aurelia/kernel": "^2.0.0-alpha.22",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "@prisma/client": "^3.4.2",
+    "@types/node": "^16.11.7",
+    "@types/node-schedule": "^1.3.2",
+    "axios": "^0.24.0",
+    "discord-api-types": "^0.24.0",
+    "discord.js": "^13.3.1",
+    "dotenv": "^10.0.0",
+    "node-schedule": "^2.0.0",
+    "reflect-metadata": "^0.1.13",
+    "typescript": "^4.4.4"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.22",
+    "@types/mocha": "^9.0.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.3",
+    "nodemon": "^2.0.15",
+    "prisma": "^3.4.2",
+    "ts-mockito": "^2.6.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.4.4"
+  }
+}
