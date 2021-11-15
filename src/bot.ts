@@ -31,12 +31,13 @@ export class Bot {
   }
 
   private async refresh(client, publisher) {
-    const LAST_UPDATE = this.lastUpdate
+    console.log('Refreshing...')
+    const lastUpdate = this.lastUpdate
     axios.get(this.config.canvasAPI).then((response) => {
       if (response.status === 200) {
         const announcements = response.data.reverse()
         announcements.forEach((announcement) => {
-          if (Date.parse(announcement.posted_at) > LAST_UPDATE) {
+          if (Date.parse(announcement.posted_at) > lastUpdate) {
             publisher.post(client, announcement)
           }
         })

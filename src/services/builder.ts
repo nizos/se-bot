@@ -12,7 +12,6 @@ export class Builder {
   }
   embed = (body) => {
     const message = this.formatter.strip(body.message)
-    console.log('Builder -> message: ', message)
     const messageEmbed = new MessageEmbed()
     messageEmbed.setTitle(body.title)
     messageEmbed.setURL(body.url)
